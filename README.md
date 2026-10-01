@@ -43,6 +43,11 @@ cp backend/.env.example backend/.env   # lalu isi kunci Anda
 # 3. Jalankan
 bash scripts/start_sandbox_stack.sh    # Xvfb + Chrome CDP + VNC + sandbox API :8080
 bash scripts/start_backend.sh          # backend :3000 (melayani UI Manus di /)
+
+# 4. (Opsional tapi disarankan) Watchdog self-healing —
+#    auto-restart Chrome CDP / sandbox API / VNC jika ada yang mati,
+#    sehingga task agent tidak macet:
+setsid nohup bash scripts/watchdog.sh > /dev/null 2>&1 &
 ```
 
 Buka UI lewat gateway **port 81** (atau `http://localhost:3000`), daftar akun, lalu kirim task — agent akan menyusun rencana, memanggil tool browser (kartu tool bisa diklik untuk melihat komputer), dan menjawab secara streaming.
