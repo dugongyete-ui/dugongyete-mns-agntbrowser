@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Environment & secrets
+.env
+.env.local
+*.env.local
+
+# Logs & runtime
+logs/
+*.log
+nohup.out
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data lokal
+db/
+users/
